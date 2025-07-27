@@ -9,13 +9,23 @@ use Illuminate\Notifications\Notifiable;
 
 class Ai extends Model
 {
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $table = 'ais';
 
-    public function apiTokens()
-    {
-        return $this->hasMany(ApiToken::class);
-    }
+    protected $fillable = [
+      'user_id',
+      'name',
+      'slug',
+      'language',
+      'tone',
+      'prefix_prompt',
+      'sample_json',
+      'is_active'
+    ];
+
+    public $timestamps = true;
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 }
