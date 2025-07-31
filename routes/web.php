@@ -21,4 +21,7 @@ Route::middleware('auth')->group(function() {
 
     Route::get('/api-usages', [\App\Http\Controllers\ApiUsages::class, 'index'])->name('usages.index');
     Route::post('/api-usages/createToken', [\App\Http\Controllers\ApiUsages::class, 'createToken'])->name('usages.create-token');
+
+    Route::get('/settings', [\App\Http\Controllers\SettingsController::class, 'index'])->name('settings');
+    Route::get('/settings/profile', [\App\Http\Controllers\SettingsController::class, 'profile'])->name('settings.profile');
 });

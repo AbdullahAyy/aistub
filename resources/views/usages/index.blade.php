@@ -39,7 +39,7 @@
 
                         <div class="card shadow-sm border-0 mb-3">
                             <div class="card-body p-3">
-                                <x-table :rows="$rows" />
+                                <x-table :rows="$rows" vertical  />
                             </div>
                         </div>
                     </div>
